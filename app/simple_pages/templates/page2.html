@@ -1,4 +1,46 @@
 {% extends "base.html" %}
 {% block content %}
-    Page 2
+    <div class="container background mb-5 px-5 py-4"  >
+        <div class="container inback mb-10 px-10 py-8"  >
+            <h1 class="head">Docker</h1>
+        </div>
+        <div class="container inback mb-10 px-10 py-8"  >
+            <h3 class="head">What are containers?</h3>
+            <p class="info">A container is a standard unit of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another. A Docker container image is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries and settings. Container images become containers at runtime and in the case of Docker containers - images become containers when they run on Docker Engine. Available for both Linux and Windows-based applications, containerized software will always run the same, regardless of the infrastructure. Containers isolate software from its environment and ensure that it works uniformly despite differences for instance between development and staging.</p>
+            <hr>
+            <h3 class="head">What are images?</h3>
+            <p class="info">A Docker image is a file used to execute code in a Docker container. Docker images act as a set of instructions to build a Docker container, like a template. Docker images also act as the starting point when using Docker. An image is comparable to a snapshot in virtual machine (VM) environments. A Docker image contains application code, libraries, tools, dependencies and other files needed to make an application run. When a user runs an image, it can become one or many instances of a container.</p>
+            <hr>
+            <h3 class="head">This project can be found on dockerhub</h3>
+            <p class="info">Docker Hub is a hosted repository service provided by Docker for finding and sharing container images with your team </p>
+            <p class="info"> <a href="https://hub.docker.com/repository/docker/dhyeysk/is280-project1"> Link to the project on dockerhub</a> </p>
+            <hr>
+            <h3 class="head">Docker Commands</h3>
+                <p class="info"> Here are some docker commands I know:</p>
+                <p class="info"> ($ docker –version) - This command is used to get the currently installed version of docker</p>
+                <p class="info"> ($ docker pull (image name)) - This command is used to pull images from the docker repository </p>
+                <p class="info"> ($ docker ps) - This command is used to list the running containers </p>
+                <p class="info"> ($ docker run -it -d (image name)) - This command is used to create a container from an image</p>
+                <p class="info"> ($ docker exec -it (container id) bash) - This command is used to access the running container</p>
+                <p class="info"> ($ docker kill (container id)) - This command kills the container by stopping its execution immediately. The difference between ‘docker kill’ and ‘docker stop’ is that ‘docker stop’ gives the container time to shutdown gracefully, in situations when it is taking too much time for getting the container to stop, one can opt to kill it</p>
+                <p class="info"> ($ docker commit ((conatainer id) (username/imagename)) - This command creates a new image of an edited container on the local system</p>
+                <p class="info"> ($ docker push (username/image name)) - This command is used to push an image to the docker hub repository </p>
+                <p class="info"> ($ docker rm (container id)) - This command is used to delete a stopped container </p>
+                <p class="info"> ($ docker images) This command lists all the locally stored docker images</p>
+                <p class="info"> ($ docker build (path to docker file)) - This command is used to build an image from a specified docker file</p>
+
+
+            <hr>
+            <h3 class="head">Information on starting the project and accessing container with terminal commands in terminal</h3>
+            <p class="info"> After opening terminal, one needs to login to docker with the command ($ docker login)</p>
+            <p class="info"> Then ($ docker image ls) needs to be run to find out the locally stored images </p>
+            <p class="info"> If the image is not available locally, ($ docker pull (image name)) command needs to be run to pull the image from the repository in docker-hub </p>
+            <p class="info"> After getting the image name, ($ docker run -it -d (image name)) command needs to be run to create a container from the image </p>
+            <p class="info"> Now the project is running. To access the running container ($ docker exec -it (container id) bash) can be used</p>
+            <p class="info"> The final step is to run ($ docker compose up --build), this command will build up the container and the project can then be viewed on the web browser(local host)</p>
+
+            <hr>
+
+        </div>
+    </div>
 {% endblock %}
