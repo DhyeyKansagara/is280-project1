@@ -117,3 +117,10 @@ h1.head{
     font-family: "Franklin Gothic Heavy" !important;
     text-align: center;
 }
+
+.info{
+    font-size: 22px;
+}
+.card-text{
+    font-size: 15px;
+}
