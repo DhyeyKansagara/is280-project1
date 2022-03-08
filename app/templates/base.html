@@ -11,16 +11,17 @@
     {% block head %}
         <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
 
-        <title>{% block title %}{% endblock %}This is {{ name }} Website</title>
+        <title>{% block title %}{% endblock %}Dhyey Kansagara</title>
+        <link rel="shortcut icon" href="../../static/images/dk.png">
     {% endblock %}
 
 </head>
 <body>
-<div class="container-fluid">
+<div class="container-fluid mb-5">
     <div class="row">
         <header class="mb-5">
             <!-- As a link -->
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div class="container">
                     <a class="navbar-brand" href="/">Dhyey Kansagara</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -44,6 +45,7 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ url_for('simple_pages.show', page="page4")}}">CI/CD</a>
                             </li>
+                             <input type="text" id="VisualSearchInput" class="pre-search-input headline-5" name="search" autocomplete="off" data-var="vsInput" tabindex="0" placeholder="Search">
                         </ul>
                     </div>
                 </div>
@@ -55,7 +57,8 @@
         {% endblock %}
     </div>
     <footer>
-       <p>&copy; Dhyeykumar Kansagara, 2021 | <a href="#">Term Of Use</a> | <a href="#"> Privacy Statement</a> </p>
+        Environment: {{ deployment_environment }} - Copyright: Dhyey Kansagara {{ year }}
+
     </footer>
 
 </div>
