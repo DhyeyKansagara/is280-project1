@@ -2,11 +2,33 @@
 {% block content %}
     <div class="container background mb-5 px-5 py-4"  >
         <div class="container inback mb-10 px-10 py-8"  >
-            <h1 class="head">Git</h1>
+            <h1 class="head">Git/Github</h1>
         </div>
         <div class="container inback mb-10 px-10 py-8"  >
             <h3 class="head">What is git?</h3>
-            <p>Git is a DevOps tool used for source code management. It is a free and open-source version control system used to handle small to very large projects efficiently. Git is used to tracking changes in the source code, enabling multiple developers to work together on non-linear development. Linus Torvalds created Git in 2005 for the development of the Linux kernel.</p>
+            <p class="info">Git is a DevOps tool used for source code management. It is a free and open-source version control system used to handle small to very large projects efficiently. Git is used to tracking changes in the source code, enabling multiple developers to work together on non-linear development. Linus Torvalds created Git in 2005 for the development of the Linux kernel.</p>
+            <hr>
+            <h3 class="head">What are repositories?</h3>
+            <p class="info">Repositories in GIT contain a collection of files of various different versions of a Project. These files are imported from the repository into the local server of the user for further updations and modifications in the content of the file. A VCS or the Version Control System is used to create these versions and store them in a specific place termed as a repository. You can clone, delete and edit a repository. Adding to a repository is usually done with push command after committing changes.</p>
+            <hr>
+            <h3 class="head">What is a commit?</h3>
+            <p class="info">A commit, or "revision", is an individual change to a file (or set of files). When you make a commit to save your work that allows you to keep record of the specific changes committed along with who made them and when. Commits usually contain a commit message which is a brief description of what changes were made. The git commit command captures a snapshot of the project's currently staged changes. Committed snapshots can be thought of as “safe” versions of a project—Git will never change them unless you explicitly ask it to. Prior to the execution of git commit, The git add command is used to promote or 'stage' changes to the project that will be stored in a commit. These two commands git commit and git add are two of the most frequently used.</p>
+            <hr>
+            <h3 class="head">Information on tags and tagging</h3>
+            <p class="info">Tags are ref's that point to specific points in Git history. Tagging is generally used to capture a point in history that is used for a marked version release (i.e. v1.0.1). A tag is like a branch that doesn’t change. Unlike branches, tags, after being created, have no further history of commits. For more info on branches visit the git branch page. This document will cover the different kind of tags, how to create tags, listing all tags, deleting tags, sharing tags, and more.</p>
+            <hr>
+            <h3 class="head">Information on branches</h3>
+            <p class="info">Branch in Git is used to keep your changes until they are ready. You can do your work on a branch while the main branch (master) remains stable. After you are done with your work, you can merge it with the main office. The idea of branching is to keep the master code safe from any bugs. Branches are merged to the main code after testing that they are safe to be merged.</p>
+            <hr>
+            <h3 class="head">What is merge and merging?</h3>
+            <p class="info">Merging is Git's way of putting a forked history back together again. The git merge command lets you take the independent lines of development created by git branch and integrate them into a single branch. git merge takes two commit pointers, usually the branch tips, and will find a common base commit between them. Once Git finds a common base commit it will create a new "merge commit" that combines the changes of each queued merge commit sequence.</p>
+            <hr>
+
+
+
+
+
+
         </div>
     </div>
 {% endblock %}
