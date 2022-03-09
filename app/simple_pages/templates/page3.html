@@ -1,4 +1,61 @@
 {% extends "base.html" %}
 {% block content %}
-    Page 3
+    <div class="container background mb-5 px-5 py-4"  >
+        <div class="container inback mb-10 px-10 py-8"  >
+            <h1 class="head">Python/flask</h1>
+        </div>
+        <div class="container inback mb-10 px-10 py-8"  >
+            <h3 class="head">Testing with pytest</h3>
+            <p class="intro">The pytest framework makes it easy to write small, readable tests, and can scale to support complex functional testing for applications and libraries. This tests makes sure that every thing in the code is in the working condition. For an example there can be a test with function 'def inc(x)' that returns x+1. Now the test will check if x+1 is actually the answer. For example, if x=3 then asserting inc(3)==4 willpass and inc(3)==5 will not.</p>
+            <hr>
+            <h3 class="head">Examples of pytest from the project</h3>
+            <p class="intro"> There are few pytest for this project. The tests written to check if the simple pages of the application are working have two assertions. For an example, 'test_request_page1' checks if the page1 is responding and working. It does so by setting assert response.status_code == 200. In HTML, a page is working when a page returns 200 as status code. It also checks that it is working by matching one string from page1 by the code 'assert b"git" in response.data' Likewise, there are similar tests for other pages to continuously check the pages are in working condition. </p>
+            <p class="intro"> An other pytest 'test_context_variables_year' checks if the year and the copyright strings are being printed correctly in the footer of every page. </p>
+            <hr>
+            <h3 class="head">How were the simple pages made?</h3>
+            <p class="intro"> Simple pages were made using bootstrap 5 and jinja 2. A base HTML file includes the code for navigation bar and the footer. All the other pages extends the base HTML file with jinja 2 syntax. The working of these were tested by constantly updating the code in a branch and merging the branch to the git master branch. The pytest booted every time the code was pulled and merged on Github. Getting a green check for the run test assured that the pages were running properly. Pytest was also run locally on pycharm in 'services' with the command 'pytest' in the terminal. </p>
+            <hr>
+            <h3 class="head">Useful Links</h3>
+            <p class="into"><a href="https://github.com/DhyeyKansagara/is280-project1">link to the project on Github</a></p>
+            <p class="intro"><a href="https://flask.palletsprojects.com/en/2.0.x/">Link to flask</a></p>
+            <p class="intro"><a href="https://flask.palletsprojects.com/en/2.0.x/blueprints/">link to flask Blueprint documentation</a></p>
+            <p class="intro"><a href="https://flask.palletsprojects.com/en/2.0.x/testing/">link to flask testing with PyTest </a></p>
+            <hr>
+            <h3 class="head">Project Outline explanation</h3>
+            <p class="intro">
+                <ul>
+                    <li>Project Root Folder <- Root of the project</li>
+                        <ul>
+                            <li>docker-compose.yml <- Orchestration file that contains the configuration to develop locally, it overrides the Dockerfile to run the flask development server instead of running the gunicorn server that is used for hosting on Heroku</li>
+                            <li>Dockerfile <-File used to create an image to run in a container that runs the program</li>
+                            <li>.gitignore <- File used to tell Git which files to ignore while committing the project to the Github repository. It, here, prevents files like '.cache', '.local', '.idea' from being committed to the Github.</li>
+                            <li>.dockerignore <- File used to mention a list of files to ingore while building an image. In this case, the file ignores '.git/' </li>
+                            <li>readme.md <- File used to easily make the heroku dev and prod app links available to the viewers of the project. It also has instruction on how the tools needed to be used </li>
+                        </ul>
+                    <li> Workflows folder <- has the workflow .yml files</li>
+                        <ul>
+                            <li>dev.yml <- file to manage the development workflow. It has a configuration that boots pytest when a pull request is made. It deploys the application to heroku development app</li>
+                            <li>prod.yml <- file to manage the production workflow. It has a configuration that boots pytest when a push request is made. It deploys the application to heroku production app. It also triggers docker.</li>
+                        </ul>
+                    <li> App folder <- has all the app folders and init files</li>
+                        <ul>
+                            <li>__init__.py <- Creates and configure an instance of the Flask application.</li>
+                            <li>run.py <- This allows Gunicorn to serve the app in production</li>
+                            <li>base.html <- has the starter code from which the other simple_pages files are extended</li>
+                            <li>index.html <- has code for the home page of the application</li>
+                            <li>page1.html, page2.html, page3.html, page4.html <- hase code for git, docker, flask, CI-CD page respectively</li>
+                            <li>styles.css <- Code used to style the web application</li>
+                            <li>images folder <- has all the images that were used in the application</li>
+                        </ul>
+                    <li> tests folder <- has all the pytest files</li>
+                        <ul>
+                            <li>conftest.py <- This makes the test configuration setup </li>
+                            <li>context_process_test.py <- pytest to check environment, copyright and the year is printed</li>
+                            <li>simple_pages_test.py <- pytest to check if all the pages are responding and are printing what they are supposed to print</li>
+                        </ul>
+                </ul>
+            </p>
+
+        </div>
+    </div>
 {% endblock %}
