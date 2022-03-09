@@ -5,17 +5,26 @@
             <h1 class="head">CI-CD</h1>
         </div>
         <div class="container inback mb-10 px-10 py-8"  >
-            <h3 class="head">Testing with pytest</h3>
-            <p class="intro"></p>
+            <h3 class="head">How is the project setup to use Github actions?</h3>
+            <p class="intro">GitHub Actions makes it easy to automate all the software workflows, with world-class CI/CD. Github actions allow to include CI-CD to any of the Github flows. Github actions are event driven that allows to run series of commands after an event occurs</p>
+            <p class="intro"> This project is setup in a way where CI-CD capabilities are built in directly in the Github repository. The project has two .yml files - "dev.yml" and "prod.yml". These files are stored in the directory called ".github/workflows". An event triggers the workflow which contains the job. Jobs controls the order in which actions are run and these actions further automate the testing.</p>
+            <p class="into"> For an example, the file "prod.yml" has script that triggers series of actions when a code is pushed to the Github. There are specifically three actions that take place. One action triggers pytest that checks if all the pages are running. Second creates a docker container and pushes to the docker hub. The third action deploys the app into heroku production app. If all the actions run perfectly, Github actions gives green status checks that confirms that the code is safe to be merged.  </p>
             <hr>
-            <h3 class="head">Useful Links</h3>
-            <p class="into"><a href="https://github.com/DhyeyKansagara/is280-project1">link to the project on Github</a></p>
-            <p class="intro"><a href="https://flask.palletsprojects.com/en/2.0.x/">Link to flask</a></p>
-            <p class="intro"><a href="https://flask.palletsprojects.com/en/2.0.x/blueprints/">link to flask Blueprint documentation</a></p>
-            <p class="intro"><a href="https://flask.palletsprojects.com/en/2.0.x/testing/">link to flask testing with PyTest </a></p>
+            <h3 class="head"> How you can review code using a development server?</h3>
+            <p class="intro"> After a pull request is opened, anyone with read access can review and comment on the changes it proposes. You can also suggest specific changes to lines of code, which the author can apply directly from the pull request. Reviewing is done generally looking at the status checks. "Many teams like to make this even more apparent by hooking up a continuous display to the build system - lights that glow green when the build works, or red if it fails are popular."<sup>1</sup></p>
             <hr>
-            <h3 class="head">Project Outline explanation</h3>
-            <p class="intro"></p>
+             <h3 class="head">how you can deploy master to a production server: </h3>
+            <p class="intro"> deploying master to a production server is also known as continuous delivery. You achieve continuous delivery by continuously integrating the software done by the development team, building executables, and running automated tests on those executables to detect problems. Furthermore you push the executables into increasingly production-like environments to ensure the software will work in production. extensive automation of all possible parts of the delivery process, is usually done using a DeploymentPipeline.<sup>2</sup></p>
+            <h3 class="head">How to Deploy project image to Dockerhub when master is updated?</h3>
+            <p class="into"> The "prod.yml" file has scripts that trigger actions. One of the script is written to take in the dockerhub login information and docker repository. It then takes the image, builds it and pushes it to the dockerhub repository. So everytime a code is pushed to Github, Github actions trigger the deployment command to the dockerhub repository and that is how the image of the project is deployed to Dockerhub everytime the master is updated.  </p>
+            <hr>
+            <h3 class="head">Citations</h3>
+            <p class="intro">
+                <ol>
+                    <li>https://www.martinfowler.com/articles/continuousIntegration.html</li>
+                    <li>https://www.martinfowler.com/bliki/ContinuousDelivery.html</li>
+                </ol>
+            </p>
 
         </div>
     </div>
