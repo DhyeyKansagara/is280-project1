@@ -1,10 +1,10 @@
 # Project Setup
 
-
+[![Production Workflow](https://github.com/DhyeyKansagara/is280-project1/actions/workflows/prod.yml/badge.svg)](https://github.com/DhyeyKansagara/is280-project1/actions/workflows/prod.yml)
 * [Production Deployment](https://is280-project1-production.herokuapp.com/)
 
 
-
+[![Development Workflow](https://github.com/DhyeyKansagara/is280-project1/actions/workflows/dev.yml/badge.svg)](https://github.com/DhyeyKansagara/is280-project1/actions/workflows/dev.yml)
 * [Developmental Deployment](https://is280-project1-development.herokuapp.com/)
 
 ## Setting up CI/CD
