@@ -1,4 +1,78 @@
 {% extends "base.html" %}
 {% block content %}
+<div class="container background mb-5 px-5 py-4"  >
+
+        <div class="container inback mb-10 px-10 py-8"  >
+            <h1 class="head"> AAA testing tutorial with python </h1>
+        </div>
+        <hr>
+        <div class="container inback center mb-10 px-10 py-8"  >
+            <img src="../../static/images/aaa.png" class="aaa-img" alt="image of AAA testing">
+
+        </div>
+        <div class="container inback mb-10 px-10 py-8"  >
+                <h3 class="head"> Overview</h3>
+                <p class="intro"> The AAA (Arrange-Act-Assert) pattern has become almost a standard across the industry. It suggests that you should divide your test method into three sections: arrange, act and assert. Each one of them only responsible for the part in which they are named after.
+                    <br><br>
+                    Arrange-Act-Assert is a great way to structure test cases. It prescribes an order of operations:
+                <ul class="intro">
+                    <li> <b>Arrange</b> inputs and targets. Arrange steps should set up the test case. Does the test require any objects or special settings? Does it need to prep a database? Does it need to log into a web app? Handle all of these operations at the start of the test.</li>
+                    <li> <b>Act </b> on the target behavior. Act steps should cover the main thing to be tested. This could be calling a function or method, calling a REST API, or interacting with a web page. Keep actions focused on the target behavior.</li>
+                    <li> <b> Assert</b> expected outcomes. Act steps should elicit some sort of response. Assert steps verify the goodness or badness of that response. Sometimes, assertions are as simple as checking numeric or string values. Other times, they may require checking multiple facets of a system. Assertions will ultimately determine if the test passes or fails. </li>
+                </ul>
+                <p class="intro">This can be depicted and understood well with a code snippet. Following is a simple code snippet to test the calculator application with AAA pattern. The following example tests if the multiplication method of the calculator is functioning the way it is supposed to function.
+                </p>
+                </p>
+                <p class="intro"> <b>Arrange -</b> The block of code that sets up the conditions for the test action or sets up the initial data. In the following example, the code next to comment 'Arrange' shows the arrange part of AAA test. It sets the pair of integers and stores it in a variable.  </p>
+                <div class="container code-bg mb-10 px-10 py-8"  >
+                <code class="intro">
+                    def test_calculator_multiplication_method(): <br>
+                    """Testing the calculator's multiplication method""" <br>
+                    data_pair = (10,4) #Arrange
+                </code>
+                </div>
+                <hr>
+                <p class="intro"> <b>Act -</b> The line of code where the Action is taken on the SUT. In the following example, the code next to comment 'Act' shows the act part of AAA test. It creates an action of multiplication in the calculator program and the result in stored in variable result.</p>
+                <div class="container code-bg mb-10 px-10 py-8"  >
+                <code class="intro">
+                    def test_calculator_multiplication_method(): <br>
+                    """Testing the calculator's multiplication method""" <br>
+                    data_pair = (10,4) #Arrange <br>
+                    result = Calculator.multiply(data_pair) #Act
+                </code>
+                </div>
+                <hr>
+                <p class="intro"> <b>Assert -</b> The block of code that performs the assertions on the state of the SUT after the action. In the following example, the code next to comment 'Assert' shows the assert part of AAA test. The following code asserts if the result is correct, in the given example is checks if the result is 40. The result is actually 40 and thus the test will pass.   </p>
+                <div class="container code-bg mb-10 px-10 py-8"  >
+                <code class="intro">
+                    def test_calculator_multiplication_method(): <br>
+                    """Testing the calculator's multiplication method""" <br>
+                    data_pair = (10,4) #Arrange <br>
+                    result = Calculator.multiply(data_pair) #Act <br>
+                    assert result == 40 #Assert
+                </code>
+                </div>
+                <hr>
+                <h3 class="head"> Importance of testing</h3>
+                <p class="intro"> Updating and replacing software is essential to business these days. In a world where technology is more accessible than ever, it is a part of our life, with regular updates on mobile devices, system down time for website maintenance and more - the list goes on.</p>
+                <ol class="intro">
+                    <b> 4 reasons why testing is important </b>
+                    <li> <b> Increase the quality</b> Testing and quality go hand in hand. Quality can be measured by the number of defects identified during testing and those will then be fixed within a software development lifecycle. This will continue throughout the development phase, and by testing continuously, it enables the quality of the software to be improved. Testing enables you to see what the software does and how well it does it so that the business can measure the quality of the software before it goes live. </li> <br>
+                    <li> <b> Security </b> It is another crucial point why software testing should not be taken into consideration. It is considered to be the most vulnerable and sensitive part. There are a bunch of situations in which the information and details of the users are stolen and they are used for the benefits. It is considered to be the reason why people look for the well tested and reliable products. As a specific product undergoes testing, the user can be ensured that they are going to receive a reliable product. The personal details of the user can be safe. Users can receive products that are free from vulnerability with the aid of software testing.</li> <br>
+                    <li> <b> cost effective </b> The testing of software has a wide array of benefits. The cost-effectiveness of the project happens to be one of the top reasons why companies go for software testing Services. The testing of software comprises of a bunch of projects. In case you find any bug in the early phases, fixing them costs a reduced amount of money. Hence, it is a prerequisite that you should get the testing done in no time. As you hire quality analysts or testers who have an ample amount of experience and have gone through technical education for the projects, they are the investments and the project is going to reap the benefits.</li> <br>
+                    <li> <b> customer satisfaction </b> Last but by no means least, all the above leads to a happy customer! System stability is what we all want as customers. Testing throughout the development lifecycle provides visibility as to how well and stable the software has been developed, therefore increasing confidence in the customer once released into a live environment. </li>
+                </ol>
+                <h3 class="head"> Benefits of AAA testing</h3>
+                <p class="intro"> There are many benefits of AAA in unit testing, but the main one is that it saves time. It saves time because it helps developers write a test without thinking about how to structure the unit test method. With AAA, developers just follow the instructions that are provided to them. In addition, you can use AAA for a variety of types of testing, including integration testing, system testing, and acceptance testing.</p>
+                <br>
+                <hr>
+                <h3 class="head"> References</h3>
+                <ul class="intro">
+                    <li> https://jamescooke.info/arrange-act-assert-pattern-for-python-developers.html</li>
+                    <li> https://automationpanda.com/2020/07/07/arrange-act-assert-a-pattern-for-writing-good-tests/</li>
+                    <li> https://www.indiumsoftware.com/blog/why-software-testing/</li>
+                </ul>
+        </div>
+</div>
 
 {% endblock %}
