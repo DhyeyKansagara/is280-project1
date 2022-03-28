@@ -5,6 +5,7 @@
 
         <div class="container inback mb-10 px-10 py-8"  >
             <h1 class="head">Glossary of OOP terms</h1>
+            <div class="container inback mb-10 px-10 py-8"  >
             <div class="list-group">
                   <a href="#class" class="list-group-item list-group-item-action">
                     Class
@@ -29,6 +30,7 @@
                   <a href="#solid" class="list-group-item list-group-item-action">Overview of SOLID</a>
                   <a href="#design" class="list-group-item list-group-item-action">Overview of Design Patterns</a>
 
+            </div>
             </div>
         </div>
          <hr>
@@ -96,34 +98,38 @@
             <img src="../../static/images/solid.jpeg" class="content-img" alt="image of SOLID">
             <h3 class="head"> <a id="solid">Overview of SOLID</a> </h3>
             <p class="intro">
-                <ul>
+                SOLID is an acronym that stands for five key design principles: single responsibility principle, open-closed principle, Liskov substitution principle, interface segregation principle, and dependency inversion principle. All five are commonly used by software engineers and provide some important benefits for developers.
+
+                <ul class="intro">
                     <li> S - Single-responsibility Principle <p>A class should have one and only one reason to change, meaning that a class should have only one job.</p>  </li>
                     <li> O - Open-closed Principle <p>Objects or entities should be open for extension but closed for modification.</p></li>
                     <li> L - Liskov Substitution Principle <p> Let q(x) be a property provable about objects of x of type T. Then q(y) should be provable for objects y of type S where S is a subtype of T.</p></li>
                     <li> I - Interface Segregation Principle <p> A client should never be forced to implement an interface that it doesn’t use, or clients shouldn’t be forced to depend on methods they do not use.</p> </li>
                     <li> D - Dependency Inversion Principle <p> Entities must depend on abstractions, not on concretions. It states that the high-level module must not depend on the low-level module, but they should depend on abstractions.</p></li>
                 </ul>
+               <p class="intro">The broad goal of the SOLID principles is to reduce dependencies so that engineers change one area of software without impacting others. Additionally, they’re intended to make designs easier to understand, maintain, and extend. Ultimately, using these design principles makes it easier for software engineers to avoid issues and to build adaptive, effective, and agile software.
+               </p>
             </p>
             <hr>
             <h3 class="head"> <a id="design">Overview of Design Patterns</a> </h3>
             <p class="intro"> In software engineering, a design pattern is a general repeatable solution to a commonly occurring problem in software design. A design pattern isn’t a finished design that can be transformed directly into code. It is a description or template for how to solve a problem that can be used in many different situations.
-                <ul> Benefits
+                <ul class="intro"> <b>Benefits</b>
                     <li>Design patterns can speed up the development process by providing tested, proven development paradigms.</li>
                     <li> Reusing the design patterns helps to prevent subtle issues that can cause major problems and it also improves code readability.</li>
                     <li> Design pattern provides general solutions, documented in a format that doesn’t specifics tied to a particular problem.</li>
                     <li> Design pattern provides general solutions, documented in a format that doesn’t specifics tied to a particular problem.</li>
                 </ul>
 
-                <ol> Classification
-                    <li>Creational design patterns</li>
-                    <li> Structural design patterns </li>
-                    <li> Behavioral design patterns </li>
+                <ol class="intro"> <b>Classification</b>
+                    <li><b>Creational design patterns: </b> These design patterns provide a way to create objects while hiding the creation logic, rather than instantiating objects directly using new operator. This gives program more flexibility in deciding which objects need to be created for a given use case. </li>
+                    <li> <b>Structural design patterns: </b> These design patterns concern class and object composition. Concept of inheritance is used to compose interfaces and define ways to compose objects to obtain new functionalities. </li>
+                    <li> <b>Behavioral design patterns: </b> These design patterns are specifically concerned with communication between objects. </li>
                 </ol>
             </p>
             <hr>
             <h3 class="head"> Citations </h3>
             <p class="intro">
-                 <ol>
+                 <ol class="intro">
                     <li> https://madasamy.medium.com/introduction-to-object-oriented-design-patterns-part-i</li>
                     <li> https://www.digitalocean.com/community/conceptual_articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design</li>
                     <li> https://www.freecodecamp.org/news/object-oriented-programming-concepts-21bb035f7260/ </li>

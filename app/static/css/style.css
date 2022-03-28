@@ -111,6 +111,9 @@ p.carousel{
 .inback{
     background-image: linear-gradient(43deg, #938f84 0%, #724f57 46%, #443a3e 100%) !important;
 }
+.code-bg{
+    background-image: linear-gradient(43deg, #e5e0d3 0%, #e3d0d4 46%, #d0bfc6 100%) !important;
+}
 h1.head{
     font-size: 45px;
     color: #cebbbc !important;
@@ -121,6 +124,9 @@ h1.head{
 .info{
     font-size: 20px;
 }
+.intro{
+    font-size: 20px;
+}
 .card-text{
     font-size: 15px;
 }
@@ -129,4 +135,14 @@ h1.head{
     height: 200px;
     width: 300px;
     float: right;
+}
+
+.aaa-img{
+    height: 300px;
+    width: 400px;
+    padding: 20px 20px;
+
+}
+.center{
+    text-align: center;
 }

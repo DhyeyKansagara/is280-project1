@@ -16,14 +16,14 @@
             <p class="intro"> Simple pages were made using bootstrap 5 and jinja 2. A base HTML file includes the code for navigation bar and the footer. All the other pages extends the base HTML file with jinja 2 syntax. The working of these were tested by constantly updating the code in a branch and merging the branch to the git master branch. The pytest booted every time the code was pulled and merged on Github. Getting a green check for the run test assured that the pages were running properly. Pytest was also run locally on pycharm in 'services' with the command 'pytest' in the terminal. </p>
             <hr>
             <h3 class="head">Useful Links</h3>
-            <p class="into"><a href="https://github.com/DhyeyKansagara/is280-project1">link to the project on Github</a></p>
+            <p class="intro"><a href="https://github.com/DhyeyKansagara/is280-project1">link to the project on Github</a></p>
             <p class="intro"><a href="https://flask.palletsprojects.com/en/2.0.x/">Link to flask</a></p>
             <p class="intro"><a href="https://flask.palletsprojects.com/en/2.0.x/blueprints/">link to flask Blueprint documentation</a></p>
             <p class="intro"><a href="https://flask.palletsprojects.com/en/2.0.x/testing/">link to flask testing with PyTest </a></p>
             <hr>
             <h3 class="head">Project Outline explanation</h3>
             <p class="intro">
-                <ul>
+                <ul class="intro">
                     <li>Project Root Folder <- Root of the project</li>
                         <ul>
                             <li>docker-compose.yml <- Orchestration file that contains the configuration to develop locally, it overrides the Dockerfile to run the flask development server instead of running the gunicorn server that is used for hosting on Heroku</li>
