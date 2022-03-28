@@ -124,3 +124,9 @@ h1.head{
 .card-text{
     font-size: 15px;
 }
+
+.content-img{
+    height: 200px;
+    width: 300px;
+    float: right;
+}
