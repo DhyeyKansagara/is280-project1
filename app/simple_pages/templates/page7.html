@@ -1,4 +1,85 @@
 {% extends "base.html" %}
 {% block content %}
+<div class="container background mb-5 px-5 py-4"  >
+
+        <div class="container inback mb-10 px-10 py-8"  >
+            <h1 class="head"> Principles of the Object Oriented Programming </h1>
+        </div>
+        <hr>
+        <div class="container inback center mb-10 px-10 py-8"  >
+            <img src="../../static/images/oops.jpeg" class="aaa-img" alt="image of oop principles">
+
+        </div>
+        <div class="container inback mb-10 px-10 py-8"  >
+                <h3 class="head"> Overview</h3>
+                <p class="intro"> Object-oriented programming combines a group of data attributes with functions or methods into a unit called an "object." Typically, OOP languages are class-based, which means that a class defines the data attributes and functions as a blueprint for creating objects, which are instances of the class. Popular class-based OOP languages include Java, Python, and C++. Multiple independent objects may be instantiated—or represented—from the same class and interact with each other in complex ways.
+                    <br>
+                    This programming style is pervasive in popular programming languages such as Java, C++, Python, JavaScript and C# among others. By defining sets of classes that represent and encapsulate objects in a program, the classes can be organized into modules, improving the structure and organization of software programs. Thus, developers often use OOP as a tool when they need to create complex programs since they are easier to reason in terms of classes and their relationships.
+                <ol class="intro"> <b> Object-oriented programming has four basic concepts: </b>
+                    <li> Encapsulation </li>
+                    <li> Abstraction </li>
+                    <li> Inheritance </li>
+                    <li> Polymorphism </li>
+                </ol>
+                <p class="intro"> <b>Following is the in-depth explanation and demonstration of each concept with an example of a simple calculation program.</b>
+                </p>
+                </p>
+                <p class="intro"> <b>Encapsulation -</b> The block of code that sets up the conditions for the test action or sets up the initial data. In the following example, the code next to comment 'Arrange' shows the arrange part of AAA test. It sets the pair of integers and stores it in a variable.  </p>
+                <div class="container code-bg mb-10 px-10 py-8"  >
+                <code class="intro">
+                    def test_calculator_multiplication_method(): <br>
+                    """Testing the calculator's multiplication method""" <br>
+                    data_pair = (10,4) #Arrange
+                </code>
+                </div>
+                <hr>
+                <p class="intro"> <b>Abstraction -</b> The line of code where the Action is taken on the SUT. In the following example, the code next to comment 'Act' shows the act part of AAA test. It creates an action of multiplication in the calculator program and the result in stored in variable result.</p>
+                <div class="container code-bg mb-10 px-10 py-8"  >
+                <code class="intro">
+                    def test_calculator_multiplication_method(): <br>
+                    """Testing the calculator's multiplication method""" <br>
+                    data_pair = (10,4) #Arrange <br>
+                    result = Calculator.multiply(data_pair) #Act
+                </code>
+                </div>
+                <hr>
+                <p class="intro"> <b>Inheritance -</b> The block of code that performs the assertions on the state of the SUT after the action. In the following example, the code next to comment 'Assert' shows the assert part of AAA test. The following code asserts if the result is correct, in the given example is checks if the result is 40. The result is actually 40 and thus the test will pass.   </p>
+                <div class="container code-bg mb-10 px-10 py-8"  >
+                <code class="intro">
+                    def test_calculator_multiplication_method(): <br>
+                    """Testing the calculator's multiplication method""" <br>
+                    data_pair = (10,4) #Arrange <br>
+                    result = Calculator.multiply(data_pair) #Act <br>
+                    assert result == 40 #Assert
+                </code>
+                </div>
+                <hr>
+                <p class="intro"> <b>Polymorphism -</b> The block of code that sets up the conditions for the test action or sets up the initial data. In the following example, the code next to comment 'Arrange' shows the arrange part of AAA test. It sets the pair of integers and stores it in a variable.  </p>
+                <div class="container code-bg mb-10 px-10 py-8"  >
+                <code class="intro">
+                    def test_calculator_multiplication_method(): <br>
+                    """Testing the calculator's multiplication method""" <br>
+                    data_pair = (10,4) #Arrange
+                </code>
+                </div>
+                <hr>
+                <h3 class="head"> Advantages of OOP</h3>
+                <ol class="intro">
+                    <li> <b> Re-usability</b>  It means reusing some facilities rather than building them again and again. This is done with the use of a class. We can use it ‘n’ number of times as per our need.</li> <br>
+                    <li> <b> Data redundancy</b> This is a condition created at the place of data storage (you can say Databases)where the same piece of data is held in two separate places. So the data redundancy is one of the greatest advantages of OOP. If a user wants a similar functionality in multiple classes, he/she can go ahead by writing common class definitions for similar functionalities and inherit them.</li> <br>
+                    <li> <b> Code maintenance </b> This feature is more of a necessity for any programming languages; it helps users from doing re-work in many ways. It is always easy and time-saving to maintain and modify the existing codes by incorporating new changes into them.</li> <br>
+                    <li> <b> Security </b> With the use of data hiding and abstraction mechanism, we are filtering out limited data to exposure, which means we are maintaining security and providing necessary data to view. </li> <br>
+                    <li> <b> Better Productivity</b> with the above-mentioned facts of using the application definitely enhances its users overall productivity. This leads to more work done, finishing a better program, having more inbuilt features, and easier reading, writing and maintaining. An OOP programmer cans stitch new software objects to make completely new programs. A good number of libraries with useful functions in abundance make it possible.</li>
+                </ol>
+                <br>
+                <hr>
+                <h3 class="head"> References</h3>
+                <ul class="intro">
+                    <li> https://www.indeed.com/career-advice/career-development/what-is-object-oriented-programming</li>
+                    <li> https://automationpanda.com/2020/07/07/arrange-act-assert-a-pattern-for-writing-good-tests/</li>
+                    <li> https://www.indiumsoftware.com/blog/why-software-testing/</li>
+                </ul>
+        </div>
+</div>
 
 {% endblock %}

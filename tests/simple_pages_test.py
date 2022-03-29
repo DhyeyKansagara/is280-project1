@@ -46,6 +46,30 @@ def test_request_page4(client):
     assert response.status_code == 200
     assert b"CI-CD" in response.data
 
+def test_request_page5(client):
+    """This makes the index page"""
+    response = client.get("/page4")
+    assert response.status_code == 200
+    assert b"Glossary" in response.data
+
+def test_request_page6(client):
+    """This makes the index page"""
+    response = client.get("/page4")
+    assert response.status_code == 200
+    assert b"AAA" in response.data
+
+def test_request_page7(client):
+    """This makes the index page"""
+    response = client.get("/page4")
+    assert response.status_code == 200
+    assert b"" in response.data
+
+def test_request_page8(client):
+    """This makes the index page"""
+    response = client.get("/page4")
+    assert response.status_code == 200
+    assert b"" in response.data
+
 def test_request_page_not_found(client):
     """This makes the index page"""
     response = client.get("/page9")
