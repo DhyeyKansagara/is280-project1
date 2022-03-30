@@ -127,6 +127,9 @@ h1.head{
 .intro{
     font-size: 20px;
 }
+.intro-c{
+    font-size: 15px;
+}
 .card-text{
     font-size: 15px;
     color: black;
