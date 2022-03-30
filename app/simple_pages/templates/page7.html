@@ -21,45 +21,126 @@
                     <li> Inheritance </li>
                     <li> Polymorphism </li>
                 </ol>
-                <p class="intro"> <b>Following is the in-depth explanation and demonstration of each concept with an example of a simple calculation program.</b>
+                <h3 class="head"> Demonstration of OOP with calculator program</h3>
+                <p class="intro"> <b>Following is the code for the calculator program that will be broken down to explain each concepts. Only the addition method is shown to keep the code brief and easy to follow</b>
                 </p>
                 </p>
-                <p class="intro"> <b>Encapsulation -</b> The block of code that sets up the conditions for the test action or sets up the initial data. In the following example, the code next to comment 'Arrange' shows the arrange part of AAA test. It sets the pair of integers and stores it in a variable.  </p>
+
                 <div class="container code-bg mb-10 px-10 py-8"  >
-                <code class="intro">
-                    def test_calculator_multiplication_method(): <br>
-                    """Testing the calculator's multiplication method""" <br>
-                    data_pair = (10,4) #Arrange
+                <code class="intro-c">
+                    """ This is the Calculator Class""" <br>
+                    from calculator.calculations import Addition <br>
+                    class Calculator:<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;""" This is the default result property"""<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;@staticmethod<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;def add(tuple_list):<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;""" This is the add method"""<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Call the static method add to return the sum and set it to the calculator result property<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;calculation = Addition.create(tuple_list)<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return calculation.get_result()
+                </code>
+                </div>
+                <br>
+                <div class="container code-bg mb-10 px-10 py-8"  >
+                <code class="intro-c">
+                    """ This is a Calculation class and Addition class""" <br>
+                    from calculator.operations import Addition as Add <br>
+                    class Calculation:<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;""" calculation abstract base class"""<br>
+                       &nbsp;&nbsp;&nbsp;&nbsp; # pylint: disable=too-few-public-methods<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, tuple_list: tuple):<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;""" constructor method"""<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.values = Calculation.convert_args_to_tuple_of_float(tuple_list)<br>
+                    <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;@classmethod<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;def create(cls, tuple_list: tuple):<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;""" factory method"""<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return cls(tuple_list)<br>
+                    <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;@staticmethod<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;def convert_args_to_tuple_of_float(tuple_list):<br>
+                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; """ standardize values to list of floats"""<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# takes data in tuple, converts it to float and converts back to tuple<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;list_values_float = []<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for item in tuple_list:<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;list_values_float.append(float(item))<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return tuple(list_values_float)<br>
+    <br>
+                    class Addition(Calculation):<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;""" calculation addition class"""<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;def get_result(self):<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"""get the addition results"""<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sum_of_values = 0.0<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for value in self.values:<br>
+                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sum_of_values = Add.add(value, sum_of_values)<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return sum_of_values<br>
+                </code>
+                </div>
+                <br>
+                <div class="container code-bg mb-10 px-10 py-8"  >
+                <code class="intro-c">
+                    """ These is the Operation Classes"""<br>
+                    class Addition:<br>
+                         &nbsp;&nbsp;&nbsp;&nbsp;""" This is the addition class"""<br>
+                         &nbsp;&nbsp;&nbsp;&nbsp;# this defines a static method that you can use without instantiating the calculator class<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;@staticmethod<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;def add(value_1, value_2):<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;""" This is the add method"""<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return value_1 + value_2
                 </code>
                 </div>
                 <hr>
-                <p class="intro"> <b>Abstraction -</b> The line of code where the Action is taken on the SUT. In the following example, the code next to comment 'Act' shows the act part of AAA test. It creates an action of multiplication in the calculator program and the result in stored in variable result.</p>
+
+                <p class="intro"> <b>Encapsulation -</b> This principle states that all important information is contained inside an object and only select information is exposed. The implementation and state of each object are privately held inside a defined class. Other objects do not have access to this class or the authority to make changes. They are only able to call a list of public functions or methods. This characteristic of data hiding provides greater program  </p>
+
+                <p class="intro"> The snippet of the code below shows a perfect example of encapsulation. Here '.create' is a factory method which creates an Addition instance. This is being stored in a calculation variable and that variable encapsulates the data and the functionality to work on the data. This encapsulation helps to perform the get_result calculation in the next line of code and sums up the data.</p>
                 <div class="container code-bg mb-10 px-10 py-8"  >
-                <code class="intro">
-                    def test_calculator_multiplication_method(): <br>
-                    """Testing the calculator's multiplication method""" <br>
-                    data_pair = (10,4) #Arrange <br>
-                    result = Calculator.multiply(data_pair) #Act
+                <code class="intro-c">
+                    &nbsp;&nbsp;&nbsp;&nbsp;def add(tuple_list):<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;""" This is the add method"""<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Call the static method add to return the sum and set it to the calculator result property<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;calculation = Addition.create(tuple_list)<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return calculation.get_result()
                 </code>
                 </div>
                 <hr>
-                <p class="intro"> <b>Inheritance -</b> The block of code that performs the assertions on the state of the SUT after the action. In the following example, the code next to comment 'Assert' shows the assert part of AAA test. The following code asserts if the result is correct, in the given example is checks if the result is 40. The result is actually 40 and thus the test will pass.   </p>
+                <p class="intro"> <b>Abstraction -</b> Objects only reveal internal mechanisms that are relevant for the use of other objects, hiding any unnecessary implementation code. The derived class can have its functionality extended. This concept can help developers more easily make additional changes or additions over time.</p>
+                <p class="intro"> The following code demonstrates layers of abstraction. The get_result method is not directly summing the data. However, it is calling a loop and within the loop there is an Add function from different class that is performing the summation. Thus, here a layer of abstraction is taking place. In other words, a complex function is broken down in one function to another function to another and this is abstraction.</p>
                 <div class="container code-bg mb-10 px-10 py-8"  >
-                <code class="intro">
-                    def test_calculator_multiplication_method(): <br>
-                    """Testing the calculator's multiplication method""" <br>
-                    data_pair = (10,4) #Arrange <br>
-                    result = Calculator.multiply(data_pair) #Act <br>
-                    assert result == 40 #Assert
+                <code class="intro-c">
+                    class Addition(Calculation):<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;""" calculation addition class"""<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;def get_result(self):<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"""get the addition results"""<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sum_of_values = 0.0<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for value in self.values:<br>
+                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sum_of_values = Add.add(value, sum_of_values)<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return sum_of_values<br>
                 </code>
                 </div>
                 <hr>
-                <p class="intro"> <b>Polymorphism -</b> The block of code that sets up the conditions for the test action or sets up the initial data. In the following example, the code next to comment 'Arrange' shows the arrange part of AAA test. It sets the pair of integers and stores it in a variable.  </p>
+                <p class="intro"> <b>Inheritance -</b> Classes can reuse code from other classes. Relationships and subclasses between objects can be assigned, enabling developers to reuse common logic while still maintaining a unique hierarchy. This property of OOP forces a more thorough data analysis, reduces development time and ensures a higher level of accuracy.   </p>
+                <p class="intro"> The code below (shorter version of the original code) demonstrates the inheritance principle. It shows that the Addition class is extending the Calculations class. The abstract class Calculations is the base for the Addition subclass. This allows the Addition subclass to inherit the capabilities of the parent class (Calculations). This is the principle of inheritance. Please scroll up to see the full code. </p>
                 <div class="container code-bg mb-10 px-10 py-8"  >
-                <code class="intro">
-                    def test_calculator_multiplication_method(): <br>
-                    """Testing the calculator's multiplication method""" <br>
-                    data_pair = (10,4) #Arrange
+                <code class="intro-c">
+                    class Calculation:<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;""" calculation abstract base class"""<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;"""..."""<br>
+                    class Addition(Calculation):<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;""" calculation addition class"""<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;"""..."""<br>
+                </code>
+                </div>
+                <hr>
+                <p class="intro"> <b>Polymorphism</b> Objects are designed to share behaviors and they can take on more than one form. The program will determine which meaning or usage is necessary for each execution of that object from a parent class, reducing the need to duplicate code. A child class is then created, which extends the functionality of the parent class. Polymorphism allows different types of objects to pass through the same interface.  </p>
+                <p class="intro"> The following code shows polymorphism. Here 'get_result' method exhibits polymorphism as it will work with any object of the calculation type. You can always call 'get_result' with any class of calculation, and you will always get the result.</p>
+                <div class="container code-bg mb-10 px-10 py-8"  >
+                <code class="intro-c">
+                    &nbsp;&nbsp;&nbsp;&nbsp;def add(tuple_list):<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;""" This is the add method"""<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Call the static method add to return the sum and set it to the calculator result property<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;calculation = Addition.create(tuple_list)<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return calculation.get_result()
                 </code>
                 </div>
                 <hr>
@@ -76,7 +157,7 @@
                 <h3 class="head"> References</h3>
                 <ul class="intro">
                     <li> https://www.indeed.com/career-advice/career-development/what-is-object-oriented-programming</li>
-                    <li> https://automationpanda.com/2020/07/07/arrange-act-assert-a-pattern-for-writing-good-tests/</li>
+                    <li> https://www.techtarget.com/searchapparchitecture/definition/object-oriented-programming-OOP#:~:text=Encapsulation.,the%20authority%20to%20make%20changes.</li>
                     <li> https://www.indiumsoftware.com/blog/why-software-testing/</li>
                 </ul>
         </div>
