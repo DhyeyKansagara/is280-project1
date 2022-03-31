@@ -1,4 +1,127 @@
 {% extends "base.html" %}
 {% block content %}
 
+<div class="container background mb-5 px-5 py-4"  >
+
+        <div class="container inback mb-10 px-10 py-8"  >
+            <h1 class="head"> SOLID and Design Patterns </h1>
+        </div>
+        <hr>
+        <div class="container inback center mb-10 px-10 py-8"  >
+            <img src="../../static/images/solid.jpeg" class="aaa-img" alt="image of oop principles">
+
+        </div>
+        <div class="container inback mb-10 px-10 py-8"  >
+                <h3 class="head"> Overview</h3>
+                <p class="intro"> These principles establish practices that lend to developing software with considerations for maintaining and extending as the project grows. Adopting these practices can also contribute to avoiding code smells, refactoring code, and Agile or Adaptive software development.
+                    <br>
+                    imagine if cups had their handles at the top rather than at the side. How accessible or comfortable would it be to use this cup (object)? But if the handle remains at the side, they remain readily accessible and comfortable to use.
+                    In a software development lifecycle, the decision on how accessible and flexible an object is during this object’s design phase will ensure its usability, simplicity, ease of implementation, and accessibility towards making reliable software.
+                <ol class="intro"> <b> SOLID stands for:  </b>
+                    <li> S - Single-responsibility Principle </li>
+                    <li> O - Open-closed Principle </li>
+                    <li> L - Liskov Substitution Principle </li>
+                    <li> I - Interface Segregation Principle </li>
+                    <li> D - Dependency Inversion Principle</li>
+                </ol>
+                <h3 class="head"> Demonstration of SOLID principles with calculator program</h3>
+                <p class="intro"> <b> Following is the explanation and demonstration of each SOLID principles used in our calculator program example.</b>
+                </p>
+                </p>
+
+                <p class="intro"> <b> S - Single-responsibility Principle: </b> This means that a class should have one and only one reason to change, meaning that a class should have only one job.  </p>
+                <p class="intro"> Our code below shows this principle as the addition class has one and only one responsibility and that is to sum two values. If the sum is a float value and if the code was converting it to an int, the class would be violating this principle. This is because this class should have only one job and that is to sum two values. We can have another class to convert the value from float to int so that we do not violate this principle.   </p>
+                <div class="container code-bg mb-10 px-10 py-8"  >
+                <code class="intro-c">
+                    class Addition:<br>
+                         &nbsp;&nbsp;&nbsp;&nbsp;""" This is the addition class"""<br>
+                         &nbsp;&nbsp;&nbsp;&nbsp;# this defines a static method that you can use without instantiating the calculator class<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;@staticmethod<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;def add(value_1, value_2):<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;""" This is the add method"""<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return value_1 + value_2
+                </code>
+                </div>
+                <br>
+                <p class="intro"> <b>O - Open-closed Principle: </b> This principle suggests that Objects or entities should be open for extension but closed for modification. </p>
+                <p class="intro"> Our code below shows that the Addition class which is an operation extends the Calculation class. This means that we are calling the calculation class in each operation separately (Here .add method does that). Let's suppose we just had Calculation class that had an Addition method. We would have to add more conditional code if the operation changed and if we wanted to multiply two values. So this principle suggests that we have different classes for each operation and call calculations in it. Our code does that as the class has an ability to extend and is closed for modification. </p>
+                <div class="container code-bg mb-10 px-10 py-8"  >
+                <code class="intro-c">
+                    class Addition(Calculation):<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;""" calculation addition class"""<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;def get_result(self):<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"""get the addition results"""<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sum_of_values = 0.0<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for value in self.values:<br>
+                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sum_of_values = Add.add(value, sum_of_values)<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return sum_of_values<br>
+                </code>
+                </div>
+                <br>
+                <p class="intro"> <b>L - Liskov Substitution Principle: </b>  This principle states that Let q(x) be a property provable about objects of x of type T. Then q(y) should be provable for objects y of type S where S is a subtype of T.</p>
+                <p class="intro"> The code below shows that Addition class is inheriting Calculation class. That means that we are able to substitute these both classes together. This will not throw an error. In other words, the statement above holds true for the code below. </p>
+                <div class="container code-bg mb-10 px-10 py-8"  >
+                <code class="intro-c">
+                    class Calculation:<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;""" calculation abstract base class"""<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;"""..."""<br>
+                    class Addition(Calculation):<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;""" calculation addition class"""<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;"""..."""<br>
+                </code>
+                </div>
+                <br>
+                <p class="intro"> <b> I - Interface Segregation Principle: </b>  This principle states that A client should never be forced to implement an interface that it doesn’t use, or clients shouldn’t be forced to depend on methods they do not use.</p>
+                <p class="intro"> This principle is quite similar to Single-responsibility Principle. Since the calculator code does not have any interface it is not viable to demonstrate the principle with the code snippet. let us consider an example, we have a Manager class which represent the person which manages the workers. And we have 2 types of workers some average and some very efficient workers. Both types of workers works and they need a daily launch break to eat. But now some robots came in the company they work as well , but they don't eat so they don't need a launch break. One on side the new Robot class need to implement the IWorker interface because robots works. On the other side, the don't have to implement it because they don't eat.
+                    This is why in this case the IWorker is considered a polluted interface.</p>
+
+                <br>
+                <p class="intro"> <b> D - Dependency Inversion Principle: </b> This principle states that Entities must depend on abstractions, not on concretions. It states that the high-level module must not depend on the low-level module, but they should depend on abstractions.</p>
+                <p class="intro"> In other words it means that functions call each other. This is the easiest explanation of this principle. Below is the code snippet that shows this principle. It shows a multiple layer of abstraction. It shows that high level class calculations is depended on abstractions like Addition and add. The code clearly shows that when the 'calculation.get_result' is called, it goes to the addition class where the add method from other class sums the two values. It shows that abstractions are not depended on details.  Details are depended upon abstractions.</p>
+                <div class="container code-bg mb-10 px-10 py-8"  >
+                <code class="intro-c">
+                    class Addition(Calculation):<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;""" calculation addition class"""<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;def get_result(self):<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"""get the addition results"""<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sum_of_values = 0.0<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for value in self.values:<br>
+                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sum_of_values = Add.add(value, sum_of_values)<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return sum_of_values<br>
+                </code>
+                </div>
+                <br>
+                <hr>
+                <h3 class="head"> Identification of Design Patterns</h3>
+                <p class="intro"> In software engineering, a design pattern is a general repeatable solution to a commonly occurring problem in software design. A design pattern isn’t a finished design that can be transformed directly into code. It is a description or template for how to solve a problem that can be used in many different situations.</p>
+                <p class="intro"> <b> Factory Method</b> is a creational design pattern that provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created. This method is used in our calculator program. See the code below:  </p>
+                <p class="intro"> The following code is factory method that creates an instance of whatever type of calculation object the user is trying to get. In other words it returns back the instance of the class that the programmer is referring to. The objects are created via the new operator, but it’s being called from within the factory method. Objects returned by a factory method are often referred to as products. This helps to now override the factory method in a subclass and change the class of products being created by the method. </p>
+                <div class="container code-bg mb-10 px-10 py-8"  >
+                <code class="intro-c">
+                    class Calculation:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;@classmethod<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;def create(cls, tuple_list: tuple):<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;""" factory method"""<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return cls(tuple_list)<br>
+                </code>
+                </div>
+                <hr>
+                <h3 class="head"> Advantages of SOLID</h3>
+                <ol class="intro">
+                    <li> <b> Accessibility</b>  The SOLID Principle ensures easy access and control to object entities. The integrity of stable object-oriented applications provides easy access to objects, eliminating the risks of unintended inheritance.</li> <br>
+                    <li> <b> Ease of refactoring</b> Software change over time. Therefore developers need to build applications while keeping in mind the possibility of future changes. Poorly structured software applications make it difficult to refactor, but it is quite effortless to refactor your codebase with the SOLID principle.</li> <br>
+                    <li> <b> Debugging </b> Debugging is a crucial part of the software development process. When software applications are not adequately designed, and the codebase is clustered like spaghetti, it is hard to debug applications. The SOLID principle incorporates the feature of ensuring that the debugging process of software is much more comfortable.</li> <br>
+                </ol>
+                <br>
+                <hr>
+                <h3 class="head"> References</h3>
+                <ul class="intro">
+                    <li> https://www.digitalocean.com/community/conceptual_articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design</li>
+                    <li> https://www.techtarget.com/searchapparchitecture/definition/object-oriented-programming-OOP#:~:text=Encapsulation.,the%20authority%20to%20make%20changes.</li>
+                    <li> https://refactoring.guru/design-patterns/factory-method</li>
+
+                </ul>
+        </div>
+</div>
+
 {% endblock %}
